@@ -18,6 +18,7 @@ exports.cssLoaders = function (options) {
   const cssLoader = {
     loader: 'css-loader',
     options: {
+      minimize: process.env.NODE_ENV === 'production',
       sourceMap: options.sourceMap
     }
   }
@@ -39,8 +40,8 @@ exports.cssLoaders = function (options) {
 
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
-    const loaders = options.usePostCSS ? [cssLoader, postcssLoader,px2remLoader] : [cssLoader,postcssLoader]
-
+    const loaders = options.usePostCSS ? [cssLoader, postcssLoader,px2remLoader] : [cssLoader,postcssLoader,px2remLoader]
+    // var loaders = [cssLoader,px2remLoader]
     if (loader) {
       loaders.push({
         loader: loader + '-loader',
@@ -50,7 +51,6 @@ exports.cssLoaders = function (options) {
       })
     }
 
-    // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
       return ExtractTextPlugin.extract({

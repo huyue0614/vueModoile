@@ -3,9 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import 'lib-flexible'
-
-Vue.config.productionTip = false;
+import Vuex from 'vuex'
+import './assets/css/utils.css'
+import 'lib-flexible/flexible'
+Vue.use(Vuex)
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
@@ -13,4 +15,4 @@ new Vue({
   router,
   components: { App },
   template: '<App/>'
-});
+})

@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
+    <app-tabs></app-tabs>
   </div>
 </template>
 
 <script>
+import AppTabs from './components/AppTabs'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    AppTabs
+  }
 }
 </script>
 
@@ -18,6 +22,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
