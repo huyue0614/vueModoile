@@ -1,12 +1,18 @@
 <template>
   <div>
-   呵呵哒
+     <span>{{title}}</span>
+     <span v-text="title"></span>
+     <span v-html="title"></span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'appAngel'
+  data: function () {
+    return {
+      title: '呵呵哒'
+    }
+  }
 }
 </script>
 

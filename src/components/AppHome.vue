@@ -78,36 +78,46 @@
       </router-link>
     </ul>
 
-    <ul class="menuBar">
-      <router-link :to="{name:'AppAngel'}" tag="li" >
-        <div>
-          <img src="../assets/images/tianshi@2x.png" alt="">
-        </div>
-        <div>
-          <span>我的资料</span>
-        </div>
-        <img  src="../assets/images/youJian@2x.png" alt="">
-      </router-link>
-      <router-link :to="{name:'AppAngel'}" tag="li" >
-        <div>
-          <img src="../assets/images/tianshi@2x.png" alt="">
-        </div>
-        <div>
-          <span>门店地址</span>
-        </div>
-        <img  src="../assets/images/youJian@2x.png" alt="">
-      </router-link>
-    </ul>
+    <!--<ul class="menuBar">-->
+      <!--<router-link :to="{name:'AppAngel'}" tag="li" >-->
+        <!--<div>-->
+          <!--<img src="../assets/images/tianshi@2x.png" alt="">-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<span>我的资料</span>-->
+        <!--</div>-->
+        <!--<img  src="../assets/images/youJian@2x.png" alt="">-->
+      <!--</router-link>-->
+      <!--<router-link :to="{name:'AppAngel'}" tag="li" >-->
+        <!--<div>-->
+          <!--<img src="../assets/images/tianshi@2x.png" alt="">-->
+        <!--</div>-->
+        <!--<div>-->
+          <!--<span>门店地址</span>-->
+        <!--</div>-->
+        <!--<img  src="../assets/images/youJian@2x.png" alt="">-->
+      <!--</router-link>-->
+    <!--</ul>-->
     <!--<h1>{{ msg }}</h1>-->
+    <app-btn v-bind:msg1="msg" v-on:tell-me="tellme"></app-btn>
   </div>
 </template>
 
 <script>
+import appBtn from './AppBtn'
 export default {
-  name: 'appHome',
   data () {
     return {
-      msg: '这是一个测试的页面'
+      msg: '父组件传值给子组件',
+      tell: ''
+    }
+  },
+  components: {
+    appBtn
+  },
+  methods: {
+    tellme: function (msg) {
+      console.log(msg)
     }
   }
 }

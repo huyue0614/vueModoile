@@ -8,7 +8,6 @@
 <script>
 import AppTabs from './components/AppTabs'
 export default {
-  name: 'App',
   components: {
     AppTabs
   }
